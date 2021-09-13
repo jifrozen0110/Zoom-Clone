@@ -8,17 +8,22 @@ html(lang="en")
         link(rel="stylesheet", href="https://unpkg.com/mvp.css")
     body
         header
-            h1 Noom
+            h1 Chatting
         main
             div#welcome
                 form
-                    input(placeholder="room name", required, type="text")
+                    input#roomName(placeholder="room name" required, type="text")
+                    input#name(placeholder="Nickname" required, type="text")
                     button Enter Room
+                h4 Open Rooms :
+                ul
             div#room
                 h3
                 ul
-                form
+                form#msg
                     input(placeholder="message", required, type="text")
                     button Send
-        script(src="/socket.io/socket.io.js")
-        script(src="/public/js/app.js")
+
+        script(type='text/javascript', src='/socket.io/socket.io.js')
+        script(type="text/javascript",src="/public/js/app.js")
+
