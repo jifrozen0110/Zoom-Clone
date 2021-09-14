@@ -17,13 +17,18 @@ html(lang="en")
                     button Enter Room
                 h4 Open Rooms :
                 ul
-            div#room
-                h3
-                ul
-                form#msg
-                    input(placeholder="message", required, type="text")
-                    button Send
-
+            div#call
+                div#room
+                    h3
+                    ul
+                    form#msg
+                        input(placeholder="message", required, type="text")
+                        button Send
+                div#myStream
+                    video#myFace(autoplay,playsinline,width="400",height="400")
+                    buttom#mute Mute
+                    button#camera Trun Camera OFF
+                    select#cameras
         script(type='text/javascript', src='/socket.io/socket.io.js')
         script(type="text/javascript",src="/public/js/app.js")
 
