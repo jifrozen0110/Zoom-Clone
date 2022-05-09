@@ -1,6 +1,6 @@
 import http from 'http';
 import express from 'express';
-import SocketIO from 'socket.io';
+import { Server } from "socket.io";
 import path from 'path';
 
 const __dirname = path.resolve();
@@ -14,7 +14,7 @@ app.get('/video', (_, res) => res.render('video'));
 app.get('/*', (_, res) => res.redirect('/'));
 
 const server = http.createServer(app);
-const wss = SocketIO(server);
+const wss = new Server(server);
 
 function publicRooms(){
   const{
